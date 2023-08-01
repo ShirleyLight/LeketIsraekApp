@@ -1,0 +1,8 @@
+<!--file added-->
+{% extends 'master.html' %}
+
+{% block content %}
+  <h1>Logged out!</h1>
+  <p>You have been successfully logged out. Thank you for using our site.</p>
+  <a href="{% url 'login' %}">Login again</a>
+{% endblock %}
