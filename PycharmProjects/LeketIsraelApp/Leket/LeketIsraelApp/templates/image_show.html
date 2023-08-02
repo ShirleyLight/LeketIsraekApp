@@ -1,0 +1,43 @@
+{% load static %}
+
+    <style>
+body {
+        font-family: tahoma, Helvetica, sans-serif;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: relative; /* Make sure the parent element is relatively positioned */
+    }
+
+    body::after {
+        content: "";
+        background-image: url('{% static "images/without_tree_circle.png" %}'); /* Set the background image */
+        background-size: cover; /* sets the image to cover the entire body */
+        opacity: 0.68; /* Set the opacity of the background image */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place the pseudo-element behind other content */
+    }
+    .img {
+    float: left;
+    margin-right:-80px;
+    margin-top:-545px;
+
+}
+
+.img1 {
+    float: right;
+    margin-right:80px;
+
+}
+</style>
+<br>
+<br>
+<img src="data:image/png;base64,{{ location_image_base64 }}" alt="location_image_base64" class="img1">
+<img src="data:image/png;base64,{{ farmers_mean_image_base64 }}" alt="farmers_mean_image_base64" class="img">
+<img src="data:image/png;base64,{{ message_base64 }}" alt="message_base64" class="img1">
+
+
